@@ -7,8 +7,8 @@ namespace LAB5
         static void Main(string[] args)
         {
             //Ex1();
-            Ex2();
-            //Ex3();
+            //Ex2();
+            Ex3();
             //Ex4();
             //Ex5();
             //Ex6();
@@ -35,8 +35,8 @@ namespace LAB5
         static void Ex2()
         //scrieti un program care sa verifice daca un sir de caractere citit de la tastatura este sau nu palindrom
         {
-            
-           
+
+
             Console.Write("Introduceti un string : ");
             string inputstr = Console.ReadLine();
             string reversestr = string.Empty;
@@ -57,8 +57,27 @@ namespace LAB5
             }
             Console.ReadLine();
         }
+        static void Ex3()
+        //scrieti un program care va numara toate aparitiile unui caracter intr-un sir de caractere, ambele citite de la tast.
+        {
+           
+
+            Console.WriteLine("Introduceti sirul:");
+            string str1 = Console.ReadLine();
+
+            Console.WriteLine("Introduceti caracterul cautat:");
+            char charDeGasit = Convert.ToChar(Console.Read());
+            int numar = 0;
+
+            for (int i = 0; i < str1.Length; i++)
+            {
+                if (str1[i] == charDeGasit)
+                    numar++;
+            }
+
+            Console.WriteLine("Caracterul {0} a aparut de {1} ori", charDeGasit, numar);
+
+            Console.ReadLine(); 
+        }
     }
-
 }
-
-
