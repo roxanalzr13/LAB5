@@ -130,11 +130,34 @@ namespace LAB5
             Console.WriteLine(" Caracterul {0} apare de:{1} ori ", caracterMaxim, aparitiiCaracterMaxim);
         }
         static void Ex6()
-            //
+        //Un program care va normaliza un sir de caractere citit de la tastatura astfel incat fiecare cuvant din 
+        // sir sa inceapa cu MAJUSCULA, restul literelor fiind transformate in litere mici.
         {
-        Console.WriteLine("Introduceti sirul:");
-        string sir = Console.ReadLine();
-        char[] caractereSir = sir.ToLower().ToArray();
+            Console.WriteLine("Introduceti sirul:");
+            string sir = Console.ReadLine();
+
+            char[] delimiters = { ' ', '.', ';' };
+            string[] results = sir.ToLower().Split(delimiters);
+            for(int i=0;i<results.Length;i++)
+            {
+                Console.WriteLine(results[i]);
+            }            
+            
+        }
+    }
+}
+
+
+        
+          
+
+
+         
+                
+
+
+
+
 
 
 
