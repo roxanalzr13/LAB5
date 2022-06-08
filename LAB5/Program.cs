@@ -136,14 +136,24 @@ namespace LAB5
             Console.WriteLine("Introduceti sirul:");
             string sir = Console.ReadLine();
 
-            char[] delimiters = { ' ', '.', ';' };
-            string[] results = sir.ToLower().Split(delimiters);
-            for(int i=0;i<results.Length;i++)
+             
+            string[] sirSplit = sir.Trim().ToLower().Split(' ');
+
+           
+            string sirNou = "";
+
+           
+            for (int i = 0; i < sirSplit.Length; i++)
             {
-                Console.WriteLine(results[i]);
-            }            
-            
+                sirNou += sirSplit[i][0].ToString().ToUpper() + sirSplit[i].Substring(1) + " ";
+            }
+
+          
+            sirNou = sirNou.Trim();
+            Console.WriteLine("sir Nou este {0}", sirNou);
+
         }
+     
     }
 }
 
