@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace LAB5
 {
@@ -8,23 +9,22 @@ namespace LAB5
         {
             //Ex1();
             //Ex2();
-            Ex3();
+            //Ex3();
             //Ex4();
             //Ex5();
-            //Ex6();
+            Ex6();
             //Ex7();
         }
         static void Ex1()
         //sa se scrie un prg care va afisa pozitia unui substring intr-un string, ambele siruri citite de la tast.
         {
-            string str1;
-            string str2;
+
 
             Console.WriteLine("Introduceti string1 ");
-            str1 = Console.ReadLine();
+            string str1 = Console.ReadLine();
 
             Console.WriteLine("Introduceti string2 ");
-            str2 = Console.ReadLine();
+            string str2 = Console.ReadLine();
             int index = str1.IndexOf(str2);
             if (index < 0)
                 Console.WriteLine("Nu exista string2 ");
@@ -60,7 +60,7 @@ namespace LAB5
         static void Ex3()
         //scrieti un program care va numara toate aparitiile unui caracter intr-un sir de caractere, ambele citite de la tast.
         {
-           
+
 
             Console.WriteLine("Introduceti sirul:");
             string str1 = Console.ReadLine();
@@ -77,7 +77,67 @@ namespace LAB5
 
             Console.WriteLine("Caracterul {0} a aparut de {1} ori", charDeGasit, numar);
 
-            Console.ReadLine(); 
+            Console.ReadLine();
         }
-    }
-}
+        static void Ex4()
+        //Scrieti un program care va numara vocalele dintr-un sir de caractere citit de la tastatura
+        {
+            char[] vocale = { 'a', 'e', 'i', 'o', 'u' };
+
+
+            string str1 = Console.ReadLine();
+
+            int i;
+            int nrVocale = 0;
+
+            for (i = 0; i < str1.Length; i++)
+            {
+                //if ( (vocale, str1[i])!=null))
+                if (Array.IndexOf(vocale, str1[i]) != -1)
+                {
+                    nrVocale++;
+                }
+            }
+
+            Console.WriteLine("Numarul de vocale  este:{0} ", nrVocale);
+
+
+        }
+        static void Ex5()
+        //Scrieti un program care va afisa caracterul cu numarul cel mai mare de aparitii dintr-un string citit
+        //de la tastatura, ignorand caseing-ul literelor.
+
+        {
+            Console.WriteLine("Introduceti sirul:");
+            string sir = Console.ReadLine();
+            char[] caractereSir = sir.ToLower().ToArray();
+
+            char caracterMaxim = caractereSir[0];
+            int aparitiiCaracterMaxim = 0;
+
+            int aparitiiCaracterCurent;
+
+            for (int i = 0; i < caractereSir.Length; i++)
+            {
+                aparitiiCaracterCurent = sir.ToLower().Split(caractereSir[i]).Length - 1;
+
+                if (aparitiiCaracterCurent > aparitiiCaracterMaxim)
+                {
+                    aparitiiCaracterMaxim = aparitiiCaracterCurent;
+                    caracterMaxim = caractereSir[i];
+                }
+            }
+            Console.WriteLine(" Caracterul {0} apare de:{1} ori ", caracterMaxim, aparitiiCaracterMaxim);
+        }
+        static void Ex6()
+            //
+        {
+        Console.WriteLine("Introduceti sirul:");
+        string sir = Console.ReadLine();
+        char[] caractereSir = sir.ToLower().ToArray();
+
+
+
+
+
+
