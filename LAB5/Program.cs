@@ -7,12 +7,12 @@ namespace LAB5
     {
         static void Main(string[] args)
         {
-            //Ex1();
+            Ex1();
             //Ex2();
             //Ex3();
             //Ex4();
             //Ex5();
-            Ex6();
+            //Ex6();
             //Ex7();
         }
         static void Ex1()
@@ -38,21 +38,21 @@ namespace LAB5
 
 
             Console.Write("Introduceti un string : ");
-            string inputstr = Console.ReadLine();
-            string reversestr = string.Empty;
-            if (inputstr != null)
+            string inputsir = Console.ReadLine();
+            string reversesir = string.Empty;
+            if (inputsir != null)
             {
-                for (int i = inputstr.Length - 1; i >= 0; i--)
+                for (int i = inputsir.Length - 1; i >= 0; i--)
                 {
-                    reversestr += inputstr[i].ToString();
+                    reversesir += inputsir[i].ToString();
                 }
-                if (reversestr == inputstr)
+                if (reversesir == inputsir)
                 {
-                    Console.WriteLine("String este Palindrom Initial= {0} and Final= {1}", inputstr, reversestr);
+                    Console.WriteLine("String este Palindrom Initial= {0} and Final= {1}", inputsir, reversesir);
                 }
                 else
                 {
-                    Console.WriteLine("String nu este Palindrom Input = {0} and Output= {1}", inputstr, reversestr);
+                    Console.WriteLine("String nu este Palindrom Input = {0} and Output= {1}", inputsir, reversesir);
                 }
             }
             Console.ReadLine();
