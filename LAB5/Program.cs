@@ -7,12 +7,12 @@ namespace LAB5
     {
         static void Main(string[] args)
         {
-            Ex1();
+            //Ex1();
             //Ex2();
             //Ex3();
             //Ex4();
             //Ex5();
-            //Ex6();
+            Ex6();
             //Ex7();
         }
         static void Ex1()
@@ -137,17 +137,14 @@ namespace LAB5
             string sir = Console.ReadLine();
 
              
-            string[] sirSplit = sir.Trim().ToLower().Split(' ');
-
-           
+            string[] sir1 = sir.Trim().ToLower().Split(' ');
+          
             string sirNou = "";
-
            
-            for (int i = 0; i < sirSplit.Length; i++)
+            for (int i = 0; i < sir1.Length; i++)
             {
-                sirNou += sirSplit[i][0].ToString().ToUpper() + sirSplit[i].Substring(1) + " ";
+                sirNou += sir1[i][0].ToString().ToUpper() + sir1[i].Substring(1) + " ";
             }
-
           
             sirNou = sirNou.Trim();
             Console.WriteLine("sir Nou este {0}", sirNou);
