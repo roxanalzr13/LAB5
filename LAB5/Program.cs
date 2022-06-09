@@ -12,8 +12,9 @@ namespace LAB5
             //Ex3();
             //Ex4();
             //Ex5();
-            Ex6();
+            //Ex6();
             //Ex7();
+            //Ex8();
         }
         static void Ex1()
         //sa se scrie un prg care va afisa pozitia unui substring intr-un string, ambele siruri citite de la tast.
@@ -136,24 +137,72 @@ namespace LAB5
             Console.WriteLine("Introduceti sirul:");
             string sir = Console.ReadLine();
 
-             
+
             string[] sir1 = sir.Trim().ToLower().Split(' ');
-          
+
             string sirNou = "";
-           
+
             for (int i = 0; i < sir1.Length; i++)
             {
                 sirNou += sir1[i][0].ToString().ToUpper() + sir1[i].Substring(1) + " ";
             }
-          
+
             sirNou = sirNou.Trim();
             Console.WriteLine("sir Nou este {0}", sirNou);
 
         }
-     
-    }
-}
 
+        static void Ex7()
+            //Scrieti un program care va citi doua siruri de caractere de la tastatura si va
+           //verifica daca cele doua siruri de caractere sunt anagrame
+        {
+            Console.WriteLine("Introduceti string 1:");
+            string sir1 = Console.ReadLine();
+            Console.WriteLine("Introduceti string 2:");
+            string sir2 = Console.ReadLine();
+            if (sir1.Length != sir2.Length)
+            {
+
+                Console.WriteLine("Cuvintele nu sunt anagrame");
+            }
+            else
+            {
+
+                int i;
+                int j;
+                for (i = 0; i < sir1.Length; i++)
+                    for (j = i + 1; j < sir1.Length; j++)
+                        if (sir1[i] > sir1[j])
+                        {
+                            char aux = sir1[i];
+                            sir1[i] = sir1[j];
+                            sir1[j] = aux;
+                        }
+                for (i = 0; i < sir2.Length; i++)
+                    for (j = i + 1; j < sir2.Length; j++)
+                        if (sir2[i] > sir2[j])
+                        {
+                            char aux = sir2[i];
+                            sir2[i] = sir2[j];
+                            sir2[j] = aux;
+                        }
+                if (string.Compare(sir1, sir2) == 0)
+
+                    Console.WriteLine("Cuvintele sunt anagrame");
+                else
+
+                    Console.WriteLine("Cuvintele nu sunt anagrame");
+
+
+
+            }
+
+
+        }
+
+    }
+
+}
 
         
           
